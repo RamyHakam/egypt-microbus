@@ -1,0 +1,25 @@
+{
+  "name": "hakam/egypt-microbus",
+  "description": "PHP solution for Egypt MicroBus Problem",
+
+  "require": {
+    "phpunit/phpunit": "^9.5"
+  },
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Hakam\\MicroBusEgypt\\": "MicroBusEgypt/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hakam\\MicroBusEgypt\\Tests\\": "Tests/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Ramy hakam",
+      "email": "pencilsoft1@gmail.com"
+    }
+  ]
+}
