@@ -1,9 +1,13 @@
 # Egypt MicroBus in PHP 😊🤓   ![](https://github.com/RamyHakam/egypt-microbus/workflows/Build/badge.svg)
 ## How to Optimize load and unload the passengers in the Egyptian microBus 😍
 
+
 In this repository you can find My view of How we can solve the load and unload issue in our traditional microBus. 👌🚀
 
 This assumes that you have a microBus with a capacity of 15 people. and you can consider the microBus as any data structure that can hold 15 people.
+
+![MicroBy](https://user-images.githubusercontent.com/17661342/146622529-4f606a32-ea8e-46c2-a444-aaa51ecc5573.gif)
+
 ## The main Problem ✋
 
 In your wonderful trip using our traditional microBus in Egypt, You will find yourself struggling with some kind of a priority issue, Which you can describe as How we can optimize the passenger seats inside the microBus in a way to minimize the number of passenger moves when someone wants to get on or off at a stop station? 🤓 
