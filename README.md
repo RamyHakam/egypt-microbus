@@ -2,7 +2,9 @@
 ## How to Optimize load and unload the passengers in the Egyptian microBus 😍
 
 
-In this repository you can find My view of How we can solve the load and unload issue in our traditional microBus. 👌🚀
+In this repository you can find my view of How we can solve the load and unload issue in our traditional microBus.
+
+This is just for kidding and learning purpose you can chalanage the sloution with different test cases as you want or propose a new one 😂👌🚀
 
 This assumes that you have a microBus with a capacity of 15 people. and you can consider the microBus as any data structure that can hold 15 people.
 
