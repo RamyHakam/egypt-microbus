@@ -5,35 +5,41 @@ namespace Hakam\MicroBusEgypt;
 
 class TrafficLine
 {
+    private const NumberOfNodes = 100;
     public TrafficNode $head;
     private TrafficNode $line;
 
     public function __construct(array $stationsPassengers)
     {
-        $startStation = new StopStation(0);
-
-        foreach ($stationsPassengers[0] as $passenger) {
-            $startStation->addPassenger(new Passenger( ...$passenger));
-        }
-        unset($stationsPassengers[0]);
-        $this->line = new TrafficNode($startStation);
-        $this->head =  new TrafficNode(null);
+        $this->line = $this->initTrafficLine();
+        $this->head = new TrafficNode(null);
         $this->head->next = $this->line;
-        foreach ($stationsPassengers as $passengers) {
-            $station = new StopStation($this->line->station->getStopId() + 1);
-            foreach ($passengers as $passenger) {
-                $station->addPassenger(new Passenger(...$passenger));
+        foreach ($stationsPassengers as $key => $passengersList) {
+            for($index = $this->line->station->getStopId() ; $index < $key ; $index++) {
+                if($index !== 0)
+                {
+                    $this->line = $this->line->next;
+                }
             }
-            $this->line->next = new TrafficNode($station);
+            if ($this->line->station->getStopId() === $key) {
+                foreach ($passengersList as $passenger) {
+                    $this->line->station->addPassenger(new Passenger(...$passenger));
+                }
+            }
             $this->line = $this->line->next;
         }
+    }
 
-        for($index = $this->line->station->getStopId() + 1 ; $index<=100;$index++)
-        {
+    private function initTrafficLine(): ?TrafficNode
+    {
+        $this->line = new TrafficNode(null);
+        $startStation = $this->line;
+        for ($index = 0; $index <= self::NumberOfNodes; $index++) {
             $station = new StopStation($index);
             $this->line->next = new TrafficNode($station);
             $this->line = $this->line->next;
         }
+        return $startStation->next;
     }
 
     /**
